@@ -123,7 +123,7 @@
             lbketqua.AutoSize = true;
             lbketqua.BackColor = SystemColors.Control;
             lbketqua.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lbketqua.Location = new Point(12, 278);
+            lbketqua.Location = new Point(12, 276);
             lbketqua.Name = "lbketqua";
             lbketqua.Size = new Size(97, 28);
             lbketqua.TabIndex = 8;

@@ -62,18 +62,19 @@ namespace Lab01_Bai02
                 MessageBox.Show("Hãy nhập chính xác giá trị B", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             if (luachon == "Bảng cửu chương")
             {
                 StringBuilder bangcuuchuong = new StringBuilder();
                 for (int i = 0; i <= 10; i++)
                 {
-                    bangcuuchuong.Append($"{A} X {i} = {A * i}");
+                    bangcuuchuong.AppendLine($"{A} X {i} = {A * i}");
                 }
                 tbketqua.Text = bangcuuchuong.ToString();
             }
             else if (luachon == "Tính toán giá trị")
             {
-                //tinh (A-B)!
+                // Tính (A - B)!
                 long hieu = A - B;
                 if (hieu < 0)
                 {
@@ -81,22 +82,27 @@ namespace Lab01_Bai02
                     return;
                 }
                 long giaithua = 1;
-                for (int i = 0; i <= hieu; i++)
+                for (int i = 1; i <= hieu; i++)
                 {
                     giaithua *= i;
                 }
-                //tinh tong S;
+
+                // Tính tổng S
                 long S = 0;
                 for (int i = 1; i <= B; i++)
                 {
-                    S += A ^ i;
+                    S += (long)Math.Pow(A, i);
                 }
+
                 StringBuilder ketqua = new StringBuilder();
-                ketqua.Append($"(A - B)! = {giaithua}");
-                ketqua.Append($"S = {S}");
+                ketqua.AppendLine($"(A - B)! = {giaithua}");
+                ketqua.AppendLine($"S = {S}");
+
+                // Hiển thị kết quả
+                tbketqua.Text = ketqua.ToString();
             }
-           
         }
+
     }
 }
 
